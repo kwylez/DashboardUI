@@ -35,15 +35,50 @@ struct ContentView: View {
                     Spacer()
                 }
                 HStack(alignment: .top) {
-                    VStack(spacing: 50.0) {
-                        Image(systemName: "plus")
-                            .font(.system(.largeTitle))
-                        Image(systemName: "plus")
-                            .font(.system(.largeTitle))
-                        Image(systemName: "plus")
-                            .font(.system(.largeTitle))
-                        Image(systemName: "plus")
-                            .font(.system(.largeTitle))
+                    VStack(spacing: 10.0) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .foregroundColor(.black).opacity(0.3)
+                            Image(systemName: "chart.pie.fill")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 96, height: 96)
+                        .offset(x: -15, y: 0)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .foregroundColor(.black).opacity(0.0)
+                            Image(systemName: "folder.fill")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(.white)
+                                .opacity(0.5)
+                        }
+                        .frame(width: 96, height: 96)
+                        .offset(x: -15, y: 0)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .foregroundColor(.black).opacity(0.0)
+                            Image(systemName: "person.fill")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(.white)
+                                .opacity(0.5)
+                        }
+                        .frame(width: 96, height: 96)
+                        .offset(x: -15, y: 0)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .foregroundColor(.black).opacity(0.0)
+                            Image(systemName: "calendar")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(.white)
+                                .opacity(0.5)
+                        }
+                        .frame(width: 96, height: 96)
+                        .offset(x: -15, y: 0)
                     }
                     .padding(.trailing, 70.0)
                     .padding(.top, 90.0)
@@ -69,13 +104,14 @@ struct ContentView: View {
                             .frame(width: 400.0, height: 300.0)
                         Text("Stats")
                             .foregroundColor(.white)
-                            .font(.system(.body)).bold()
+                            .font(.system(.title)).bold()
                             .padding(.bottom)
                             .padding(.top, 45.0)
                         HStack(spacing: 100.0) {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Total Earnings")
                                     .font(.system(.caption))
+                                    .opacity(0.6)
                                 Text("$1245")
                                     .font(.system(.body)).bold()
                             }
@@ -83,6 +119,7 @@ struct ContentView: View {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Product Sold")
                                     .font(.system(.caption))
+                                    .opacity(0.6)
                                 Text("899")
                                     .font(.system(.body)).bold()
                             }
@@ -90,6 +127,7 @@ struct ContentView: View {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Ratings")
                                     .font(.system(.caption))
+                                    .opacity(0.6)
                                 Text("73%")
                                     .font(.system(.body)).bold()
                             }
