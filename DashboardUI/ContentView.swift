@@ -8,6 +8,33 @@
 
 import SwiftUI
 
+let data: Array<Int> = [
+    20,
+    43,
+    46,
+    89,
+    100
+]
+
+let chartLabels: Array<String> = [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thur",
+    "Fri"
+]
+
+extension CGPoint {
+    
+    func adding(x: CGFloat) -> CGPoint {
+        return CGPoint(x: self.x + x, y: self.y)
+    }
+    
+    func adding(y: CGFloat) -> CGPoint {
+        return CGPoint(x: self.x, y: self.y + y)
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         
@@ -126,9 +153,35 @@ struct ContentView: View {
                                         .bold()
                                 }
                                 .padding([.top, .leading, .trailing], 25)
+                                    
+                                    VStack {
+                                        GeometryReader {reader in
+                                            ZStack {
+                                                Rectangle()
+                                                    .foregroundColor(.red)
+                                                Path { path in
+                                                        path.move(to: CGPoint(x: 0, y: 0))
+                                                        path.addLine(to: CGPoint(x: reader.frame(in: .local).width / 2, y: 0))
+                                                        path.addLine(to: CGPoint(x: reader.frame(in: .local).width / 2, y: reader.frame(in: .local).height))
+                                                        path.addLine(to: CGPoint(x: 0, y: reader.frame(in: .local).height))
+                                                        path.addLine(to: CGPoint(x: 0, y: 0))
+                                                }
+                                                .foregroundColor(.blue)
+                                            }
+                                        }
+                                        HStack {
+                                            
+                                            ForEach(chartLabels, id: \.self) {label in
+                                                Text(label)
+                                                    .frame(maxWidth: .infinity)
+                                            }
+                                        }
+                                        .padding()
+                                        .frame(maxWidth: .infinity)
+                                    }
                             }
                         }
-                        .frame(width: 400.0, height: 300.0)
+                        .frame(width: 400.0, height: 400.0)
                         
                         ///
                         
