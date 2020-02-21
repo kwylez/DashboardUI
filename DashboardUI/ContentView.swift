@@ -82,6 +82,7 @@ struct ContentView: View {
                     }
                     .padding(.trailing, 70.0)
                     .padding(.top, 90.0)
+                    
                     VStack(alignment: .leading) {
                         Text("Dashboard")
                             .font(.system(.largeTitle)).bold()
@@ -99,9 +100,38 @@ struct ContentView: View {
                                 .font(.system(.body)).bold()
                         }
                         .padding(.bottom, 50.0)
-                        RoundedRectangle(cornerRadius: 15.0)
-                            .foregroundColor(.white)
-                            .frame(width: 400.0, height: 300.0)
+                        
+                        ///
+                        
+                        ZStack(alignment: .top) {
+                            
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .foregroundColor(.white)
+                            
+                            VStack(alignment: .leading) {
+                                
+                                HStack(alignment: .top) {
+                                    VStack(alignment: .leading) {
+                                        Text("$1,394")
+                                            .font(.system(.title))
+                                            .bold()
+                                        Text("+10% compared to last week")
+                                            .font(.system(.caption))
+                                            .foregroundColor(.gray)
+                                            .frame(width: 150.0)
+                                    }
+                                    Spacer()
+                                    Text("Weekly")
+                                        .font(.system(.body))
+                                        .bold()
+                                }
+                                .padding([.top, .leading, .trailing], 25)
+                            }
+                        }
+                        .frame(width: 400.0, height: 300.0)
+                        
+                        ///
+                        
                         Text("Stats")
                             .foregroundColor(.white)
                             .font(.system(.title)).bold()
