@@ -8,20 +8,35 @@
 
 import SwiftUI
 
+let chartLabels: Array<String> = [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thur",
+    "Fri"
+]
+
+let gradientStart = Color(red: 239.0 / 255, green: 120.0 / 255, blue: 221.0 / 255)
+let gradientEnd = Color(red: 239.0 / 255, green: 172.0 / 255, blue: 20.0 / 255)
+
+extension CGPoint {
+    
+    func adding(x: CGFloat) -> CGPoint {
+        return CGPoint(x: self.x + x, y: self.y)
+    }
+    
+    func adding(y: CGFloat) -> CGPoint {
+        return CGPoint(x: self.x, y: self.y + y)
+    }
+}
+
 struct ContentView: View {
+    
     var body: some View {
         
-        ZStack {
-            LinearGradient(
-                gradient:
-                Gradient(
-                    colors: [
-                        Color("TopGradient"),
-                        Color("BottomGradient")
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            ).edgesIgnoringSafeArea(.all)
+        return ZStack {
+            
+            BackgroundView()
             
             VStack {
                 HStack {
@@ -35,53 +50,9 @@ struct ContentView: View {
                     Spacer()
                 }
                 HStack(alignment: .top) {
-                    VStack(spacing: 10.0) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 15.0)
-                                .foregroundColor(.black).opacity(0.3)
-                            Image(systemName: "chart.pie.fill")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                        }
-                        .frame(width: 96, height: 96)
-                        .offset(x: -15, y: 0)
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 15.0)
-                                .foregroundColor(.black).opacity(0.0)
-                            Image(systemName: "folder.fill")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                                .opacity(0.5)
-                        }
-                        .frame(width: 96, height: 96)
-                        .offset(x: -15, y: 0)
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 15.0)
-                                .foregroundColor(.black).opacity(0.0)
-                            Image(systemName: "person.fill")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                                .opacity(0.5)
-                        }
-                        .frame(width: 96, height: 96)
-                        .offset(x: -15, y: 0)
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 15.0)
-                                .foregroundColor(.black).opacity(0.0)
-                            Image(systemName: "calendar")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                                .opacity(0.5)
-                        }
-                        .frame(width: 96, height: 96)
-                        .offset(x: -15, y: 0)
-                    }
-                    .padding(.trailing, 70.0)
-                    .padding(.top, 90.0)
+                    MenuView()
+                        .padding(.trailing, 70.0)
+                        .padding(.top, 90.0)
                     
                     VStack(alignment: .leading) {
                         Text("Dashboard")
@@ -101,68 +72,17 @@ struct ContentView: View {
                         }
                         .padding(.bottom, 50.0)
                         
-                        ///
-                        
-                        ZStack(alignment: .top) {
-                            
-                            RoundedRectangle(cornerRadius: 15.0)
-                                .foregroundColor(.white)
-                            
-                            VStack(alignment: .leading) {
-                                
-                                HStack(alignment: .top) {
-                                    VStack(alignment: .leading) {
-                                        Text("$1,394")
-                                            .font(.system(.title))
-                                            .bold()
-                                        Text("+10% compared to last week")
-                                            .font(.system(.caption))
-                                            .foregroundColor(.gray)
-                                            .frame(width: 150.0)
-                                    }
-                                    Spacer()
-                                    Text("Weekly")
-                                        .font(.system(.body))
-                                        .bold()
-                                }
-                                .padding([.top, .leading, .trailing], 25)
-                            }
-                        }
-                        .frame(width: 400.0, height: 300.0)
-                        
-                        ///
-                        
+                        DashboardView()
+                            .frame(width: 400.0, height: 400.0)
+
+//                        https://codereview.stackexchange.com/questions/229056/draw-a-spark-line-with-swiftui
                         Text("Stats")
                             .foregroundColor(.white)
                             .font(.system(.title)).bold()
                             .padding(.bottom)
                             .padding(.top, 45.0)
-                        HStack(spacing: 100.0) {
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Total Earnings")
-                                    .font(.system(.caption))
-                                    .opacity(0.6)
-                                Text("$1245")
-                                    .font(.system(.body)).bold()
-                            }
-                            .foregroundColor(.white)
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Product Sold")
-                                    .font(.system(.caption))
-                                    .opacity(0.6)
-                                Text("899")
-                                    .font(.system(.body)).bold()
-                            }
-                            .foregroundColor(.white)
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Ratings")
-                                    .font(.system(.caption))
-                                    .opacity(0.6)
-                                Text("73%")
-                                    .font(.system(.body)).bold()
-                            }
-                            .foregroundColor(.white)
-                        }
+                        
+                        StatsView()
                     }
                     Spacer()
                 }
