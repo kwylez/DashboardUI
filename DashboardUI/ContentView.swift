@@ -8,14 +8,6 @@
 
 import SwiftUI
 
-let data: Array<CGFloat> = [
-    20.0,
-    43.0,
-    46.0,
-    89.0,
-    100.0
-]
-
 let chartLabels: Array<String> = [
     "Mon",
     "Tue",
