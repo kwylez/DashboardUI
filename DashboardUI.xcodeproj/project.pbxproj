@@ -17,6 +17,9 @@
 		01665AAF24016C4C00737792 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01665AAE24016C4C00737792 /* MenuView.swift */; };
 		01665AB124016CC600737792 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01665AB024016CC600737792 /* StatsView.swift */; };
 		01665AB524016D8800737792 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01665AB424016D8800737792 /* BackgroundView.swift */; };
+		01CF825E24037F1500F03E79 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CF825D24037F1500F03E79 /* Helpers.swift */; };
+		01CF826024037FDC00F03E79 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CF825F24037FDC00F03E79 /* LineView.swift */; };
+		01CF82622403817400F03E79 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CF82612403817400F03E79 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		01665AAE24016C4C00737792 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		01665AB024016CC600737792 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		01665AB424016D8800737792 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		01CF825D24037F1500F03E79 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		01CF825F24037FDC00F03E79 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		01CF82612403817400F03E79 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,9 @@
 				01665AB424016D8800737792 /* BackgroundView.swift */,
 				01450D8823FC3F760055D0B2 /* ContentView.swift */,
 				01665A8C24016AF300737792 /* DashboardView.swift */,
+				01CF82612403817400F03E79 /* Extensions.swift */,
+				01CF825D24037F1500F03E79 /* Helpers.swift */,
+				01CF825F24037FDC00F03E79 /* LineView.swift */,
 				01665AAE24016C4C00737792 /* MenuView.swift */,
 				01450D8623FC3F760055D0B2 /* SceneDelegate.swift */,
 				01665AB024016CC600737792 /* StatsView.swift */,
@@ -161,7 +170,10 @@
 				01665AAF24016C4C00737792 /* MenuView.swift in Sources */,
 				01450D8523FC3F760055D0B2 /* AppDelegate.swift in Sources */,
 				01665AB124016CC600737792 /* StatsView.swift in Sources */,
+				01CF825E24037F1500F03E79 /* Helpers.swift in Sources */,
 				01665AB524016D8800737792 /* BackgroundView.swift in Sources */,
+				01CF82622403817400F03E79 /* Extensions.swift in Sources */,
+				01CF826024037FDC00F03E79 /* LineView.swift in Sources */,
 				01665A8D24016AF300737792 /* DashboardView.swift in Sources */,
 				01450D8723FC3F760055D0B2 /* SceneDelegate.swift in Sources */,
 				01450D8923FC3F760055D0B2 /* ContentView.swift in Sources */,
