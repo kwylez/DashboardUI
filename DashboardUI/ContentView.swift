@@ -94,9 +94,13 @@ struct ContentView: View {
                     }
                     .padding(.top)
 
-                    VStack {
-                        DetailView()
-                        Spacer()
+                    HStack {
+                        HandleBarView()
+                            .offset(x: -20.0, y: 0)
+                        VStack {
+                            DetailView()
+                            Spacer()
+                        }
                     }
                     .frame(width: 375.0, height: reader.size.height - 25.0)
                     .background(RoundedRectangle(cornerRadius: 25).fill(Color.white))
