@@ -21,6 +21,7 @@
 		01CF826024037FDC00F03E79 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CF825F24037FDC00F03E79 /* LineView.swift */; };
 		01CF82622403817400F03E79 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CF82612403817400F03E79 /* Extensions.swift */; };
 		01CF82642404271400F03E79 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CF82632404271400F03E79 /* DetailView.swift */; };
+		01F390E32404C11A00A155E8 /* BuyerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F390E22404C11A00A155E8 /* BuyerRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		01CF825F24037FDC00F03E79 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		01CF82612403817400F03E79 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		01CF82632404271400F03E79 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		01F390E22404C11A00A155E8 /* BuyerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,21 +74,22 @@
 		01450D8323FC3F760055D0B2 /* DashboardUI */ = {
 			isa = PBXGroup;
 			children = (
+				01450D9223FC3F770055D0B2 /* Info.plist */,
 				01450D8423FC3F760055D0B2 /* AppDelegate.swift */,
-				01450D8A23FC3F770055D0B2 /* Assets.xcassets */,
 				01665AB424016D8800737792 /* BackgroundView.swift */,
+				01F390E22404C11A00A155E8 /* BuyerRowView.swift */,
 				01450D8823FC3F760055D0B2 /* ContentView.swift */,
 				01665A8C24016AF300737792 /* DashboardView.swift */,
 				01CF82632404271400F03E79 /* DetailView.swift */,
 				01CF82612403817400F03E79 /* Extensions.swift */,
 				01CF825D24037F1500F03E79 /* Helpers.swift */,
-				01450D9223FC3F770055D0B2 /* Info.plist */,
-				01450D8F23FC3F770055D0B2 /* LaunchScreen.storyboard */,
 				01CF825F24037FDC00F03E79 /* LineView.swift */,
 				01665AAE24016C4C00737792 /* MenuView.swift */,
-				01450D8C23FC3F770055D0B2 /* Preview Content */,
 				01450D8623FC3F760055D0B2 /* SceneDelegate.swift */,
 				01665AB024016CC600737792 /* StatsView.swift */,
+				01450D8A23FC3F770055D0B2 /* Assets.xcassets */,
+				01450D8F23FC3F770055D0B2 /* LaunchScreen.storyboard */,
+				01450D8C23FC3F770055D0B2 /* Preview Content */,
 			);
 			path = DashboardUI;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				01665AAF24016C4C00737792 /* MenuView.swift in Sources */,
 				01450D8523FC3F760055D0B2 /* AppDelegate.swift in Sources */,
 				01665AB124016CC600737792 /* StatsView.swift in Sources */,
+				01F390E32404C11A00A155E8 /* BuyerRowView.swift in Sources */,
 				01CF825E24037F1500F03E79 /* Helpers.swift in Sources */,
 				01665AB524016D8800737792 /* BackgroundView.swift in Sources */,
 				01CF82642404271400F03E79 /* DetailView.swift in Sources */,
