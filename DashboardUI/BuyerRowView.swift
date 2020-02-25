@@ -23,6 +23,12 @@ struct BuyerRowView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 60, height: 60)
                 .clipShape(Circle())
+                .overlay(Circle().stroke(
+                    LinearGradient(gradient: Gradient(colors: [gradientStart, gradientEnd]),
+                                   startPoint: .top,
+                                   endPoint: .bottom),
+                    lineWidth: 2.0)
+                )
             Text(self.name)
                 .foregroundColor(.gray)
                 .font(.system(.headline))

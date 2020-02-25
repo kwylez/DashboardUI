@@ -86,13 +86,14 @@ struct ContentView: View {
                                 
                                 StatsView()
                             }
+                            .alignmentGuide(.top) { $0[.top] + 80 }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                             Spacer()
                         }
                         Spacer()
                     }
                     .padding(.top)
-                    
-                    ///
+
                     VStack {
                         DetailView()
                         Spacer()
@@ -103,8 +104,7 @@ struct ContentView: View {
                     .padding(.trailing, 20.0)
                     .offset(x: reader.size.height - 445.0, y: 0.0)
                 }
-        }
-
+            }
     }
 }
 

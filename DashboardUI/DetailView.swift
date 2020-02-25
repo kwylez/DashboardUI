@@ -25,107 +25,21 @@ struct DetailView: View {
                 
                 HStack(spacing: 20) {
                     
-                    VStack(alignment: .leading) {
-                        Image("Couch")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-                            .padding([.top, .bottom])
-                            .padding(.leading, 25)
-                        Text("3 Tier Cake Stand")
-                            .foregroundColor(Color("DarkBlue"))
-                            .font(.title)
-                            .bold()
-                            .cornerRadius(15.0)
-                            .padding(.bottom)
-                        Text("334 Units sold")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                            .bold()
-                            .cornerRadius(15.0)
-                        Spacer()
-                    }
-                    .frame(width: 200, height: 330.0)
-                    .background(Color("LightBlue"))
-                    .cornerRadius(25.0)
+                    ProductView(image: "Couch",
+                                productName: "Amazing Couch",
+                                unitsSold: "986 Units Sold")
                     
-                    VStack(alignment: .leading) {
-                        Image("Cookware")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-                            .padding([.top, .bottom])
-                            .padding(.leading, 25)
-                        Text("10 pc Cookware")
-                            .foregroundColor(Color("DarkBlue"))
-                            .font(.title)
-                            .bold()
-                            .cornerRadius(15.0)
-                            .padding(.bottom)
-                            .padding(.leading, 25)
-                        Text("1,204 Units sold")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                            .bold()
-                            .cornerRadius(15.0)
-                        Spacer()
-                    }
-                    .cornerRadius(20.0)
-                    .frame(width: 200, height: 330.0)
-                    .background(Color("LightBlue"))
-                    .cornerRadius(25.0)
+                    ProductView(image: "Cookware",
+                                productName: "10 pc Cookware",
+                                unitsSold: "1,204 Units sold")
                     
-                    VStack(alignment: .leading) {
-                        Image("OutdoorLight")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-                            .padding([.top, .bottom])
-                            .padding(.leading, 5)
-                        Text("Outdoor Lighting")
-                            .foregroundColor(Color("DarkBlue"))
-                            .font(.title)
-                            .bold()
-                            .cornerRadius(15.0)
-                            .padding(.bottom)
-                        Text("545 Units sold")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                            .bold()
-                            .cornerRadius(15.0)
-                        Spacer()
-                    }
-                    .frame(width: 200, height: 330.0)
-                    .background(Color("LightBlue"))
-                    .cornerRadius(25.0)
+                    ProductView(image: "OutdoorLight",
+                                productName: "Outdoor Lighting",
+                                unitsSold: "545 Units sold")
                     
-                    VStack(alignment: .leading) {
-                        Image("CakeStand")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-                            .padding([.top, .bottom])
-                            .padding(.leading, 25)
-                        Text("3 Tier Cake Stand")
-                            .foregroundColor(Color("DarkBlue"))
-                            .font(.title)
-                            .bold()
-                            .cornerRadius(15.0)
-                            .padding(.bottom)
-                        Text("334 Units sold")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                            .bold()
-                            .cornerRadius(15.0)
-                        Spacer()
-                    }
-                    .frame(width: 200, height: 330.0)
-                    .background(Color("LightBlue"))
-                    .cornerRadius(25.0)
+                    ProductView(image: "CakeStand",
+                                productName: "3 tier Cake Stand",
+                                unitsSold: "334 Units Sold")
                 }
             }
             .padding([.trailing, .leading])

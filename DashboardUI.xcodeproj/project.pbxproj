@@ -22,6 +22,7 @@
 		01CF82622403817400F03E79 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CF82612403817400F03E79 /* Extensions.swift */; };
 		01CF82642404271400F03E79 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CF82632404271400F03E79 /* DetailView.swift */; };
 		01F390E32404C11A00A155E8 /* BuyerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F390E22404C11A00A155E8 /* BuyerRowView.swift */; };
+		01F390E52404CF5A00A155E8 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F390E42404CF5A00A155E8 /* ProductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		01CF82612403817400F03E79 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		01CF82632404271400F03E79 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		01F390E22404C11A00A155E8 /* BuyerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerRowView.swift; sourceTree = "<group>"; };
+		01F390E42404CF5A00A155E8 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				01450D8A23FC3F770055D0B2 /* Assets.xcassets */,
 				01450D8F23FC3F770055D0B2 /* LaunchScreen.storyboard */,
 				01450D8C23FC3F770055D0B2 /* Preview Content */,
+				01F390E42404CF5A00A155E8 /* ProductView.swift */,
 			);
 			path = DashboardUI;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				01665AB124016CC600737792 /* StatsView.swift in Sources */,
 				01F390E32404C11A00A155E8 /* BuyerRowView.swift in Sources */,
 				01CF825E24037F1500F03E79 /* Helpers.swift in Sources */,
+				01F390E52404CF5A00A155E8 /* ProductView.swift in Sources */,
 				01665AB524016D8800737792 /* BackgroundView.swift in Sources */,
 				01CF82642404271400F03E79 /* DetailView.swift in Sources */,
 				01CF82622403817400F03E79 /* Extensions.swift in Sources */,
