@@ -19,18 +19,22 @@ let chartLabels: Array<String> = [
 let gradientStart = Color(red: 239.0 / 255, green: 120.0 / 255, blue: 221.0 / 255)
 let gradientEnd = Color(red: 239.0 / 255, green: 172.0 / 255, blue: 20.0 / 255)
 
-extension CGPoint {
-    
-    func adding(x: CGFloat) -> CGPoint {
-        return CGPoint(x: self.x + x, y: self.y)
-    }
-    
-    func adding(y: CGFloat) -> CGPoint {
-        return CGPoint(x: self.x, y: self.y + y)
-    }
-}
+let minDashboardWidth: CGFloat = 375.0
+let maxDashboardWidth: CGFloat = 450.0
 
 struct ContentView: View {
+    
+    @State var isExpanding: Bool = false
+    
+    @State var detailOffset: CGFloat = -20.0
+    
+    @State var detailViewWidth: CGFloat = minDashboardWidth
+    
+    @State var offset: CGFloat = 0.0
+    
+    private var detailViewFrameWidth: CGFloat {
+        return self.detailViewWidth + self.offset
+    }
     
     var body: some View {
         
@@ -96,17 +100,45 @@ struct ContentView: View {
 
                     HStack {
                         HandleBarView()
-                            .offset(x: -20.0, y: 0)
+                            .offset(x: self.detailOffset, y: 0)
+                            .gesture(
+                                DragGesture()
+                                 .onChanged {gesture in
+
+                                     let width: CGFloat = gesture.translation.width
+                                     print("what is width \(width)")
+                                     
+                                     self.offset = (width * -1)
+                                     
+                                     print("""
+                                        new offset \(self.offset)
+                                        ==================================
+                                        frame \(self.detailViewFrameWidth)
+                                        ==================================
+                                        reader height \(reader.size.height)
+                                        ==================================
+                                        reader width \(reader.size.width)
+                                        ==================================
+                                        screen size \(UIScreen.main.bounds.size)
+                                        ==================================
+                                        screen frame \(UIScreen.main.bounds.origin)
+                                        """)
+                                 }
+                             )
+
                         VStack {
                             DetailView()
                             Spacer()
                         }
                     }
-                    .frame(width: 375.0, height: reader.size.height - 25.0)
+                    .frame(
+                        width: self.detailViewFrameWidth,
+                        height: reader.size.height - 25.0
+                    )
                     .background(RoundedRectangle(cornerRadius: 25).fill(Color.white))
                     .padding([.top, .bottom])
                     .padding(.trailing, 20.0)
-                    .offset(x: reader.size.height - 445.0, y: 0.0)
+                    .offset(x: (reader.size.width - self.detailViewWidth), y: 0.0)
                 }
             }
     }
