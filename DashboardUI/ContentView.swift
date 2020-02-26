@@ -19,14 +19,16 @@ let chartLabels: Array<String> = [
 let gradientStart = Color(red: 239.0 / 255, green: 120.0 / 255, blue: 221.0 / 255)
 let gradientEnd = Color(red: 239.0 / 255, green: 172.0 / 255, blue: 20.0 / 255)
 
+
 let minDashboardWidth: CGFloat = 375.0
+
 let maxDashboardWidth: CGFloat = 450.0
 
 struct ContentView: View {
     
     @State var isExpanding: Bool = false
     
-    @State var detailOffset: CGFloat = -20.0
+    @State var detailOffset: CGFloat = -10.0
     
     @State var detailViewWidth: CGFloat = minDashboardWidth
     
@@ -56,6 +58,7 @@ struct ContentView: View {
                             Spacer()
                         }
                         HStack(alignment: .top) {
+                            
                             MenuView()
                                 .padding(.trailing, 70.0)
                                 .padding(.top, 90.0)
@@ -81,7 +84,6 @@ struct ContentView: View {
                                 DashboardView()
                                     .frame(width: 400.0, height: 400.0)
 
-        //                        https://codereview.stackexchange.com/questions/229056/draw-a-spark-line-with-swiftui
                                 Text("Stats")
                                     .foregroundColor(.white)
                                     .font(.system(.title)).bold()
@@ -99,30 +101,17 @@ struct ContentView: View {
                     .padding(.top)
 
                     HStack {
+
+                        Spacer()
                         HandleBarView()
+                            .zIndex(2)
                             .offset(x: self.detailOffset, y: 0)
                             .gesture(
                                 DragGesture()
                                  .onChanged {gesture in
 
                                      let width: CGFloat = gesture.translation.width
-                                     print("what is width \(width)")
-                                     
                                      self.offset = (width * -1)
-                                     
-                                     print("""
-                                        new offset \(self.offset)
-                                        ==================================
-                                        frame \(self.detailViewFrameWidth)
-                                        ==================================
-                                        reader height \(reader.size.height)
-                                        ==================================
-                                        reader width \(reader.size.width)
-                                        ==================================
-                                        screen size \(UIScreen.main.bounds.size)
-                                        ==================================
-                                        screen frame \(UIScreen.main.bounds.origin)
-                                        """)
                                  }
                              )
 
@@ -130,15 +119,13 @@ struct ContentView: View {
                             DetailView()
                             Spacer()
                         }
+                        .zIndex(4)
+                        .frame(width: self.detailViewWidth + self.offset)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .background(RoundedRectangle(cornerRadius: 25).fill(Color.white))
+                        .padding([.top, .bottom])
+                        .padding(.trailing, 20.0)
                     }
-                    .frame(
-                        width: self.detailViewFrameWidth,
-                        height: reader.size.height - 25.0
-                    )
-                    .background(RoundedRectangle(cornerRadius: 25).fill(Color.white))
-                    .padding([.top, .bottom])
-                    .padding(.trailing, 20.0)
-                    .offset(x: (reader.size.width - self.detailViewWidth), y: 0.0)
                 }
             }
     }
