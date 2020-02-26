@@ -10,6 +10,8 @@ import SwiftUI
 
 struct DetailView: View {
     
+    @Binding var viewState: DetailViewState
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -42,6 +44,7 @@ struct DetailView: View {
                                 unitsSold: "334 Units Sold")
                 }
             }
+            .disabled(self.viewState == .closed)
             .padding([.trailing, .leading])
             
             Text("Loyal Buyers")
@@ -64,6 +67,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(viewState: .constant(.opened))
     }
 }
