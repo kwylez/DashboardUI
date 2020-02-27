@@ -41,6 +41,14 @@ extension CGPoint {
         
         return controlPoint
     }
+    
+    func adding(x: CGFloat) -> CGPoint {
+        return CGPoint(x: self.x + x, y: self.y)
+    }
+    
+    func adding(y: CGFloat) -> CGPoint {
+        return CGPoint(x: self.x, y: self.y + y)
+    }
 }
 
 extension CGPath {
