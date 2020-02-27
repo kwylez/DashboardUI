@@ -131,7 +131,6 @@ struct ContentView: View {
                         (reader.size.width - minDashboardWidth) + self.positionOffset
                     )
                     .animation(.spring())
-//                    .disabled(self.viewState == .opened)
                     .onTapGesture { }
                     .gesture(
                         DragGesture().onChanged { value in
