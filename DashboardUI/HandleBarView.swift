@@ -13,7 +13,7 @@ struct HandleBarView: View {
     var body: some View {
         Rectangle()
             .frame(width: 5, height: 50)
-            .foregroundColor(Color(.systemGray2))
+            .foregroundColor(Color(.systemGray5))
             .cornerRadius(10)
     }
 }
