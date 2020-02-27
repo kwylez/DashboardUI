@@ -18,7 +18,7 @@ let chartLabels: Array<String> = [
 
 let gradientStart = Color(red: 239.0 / 255, green: 120.0 / 255, blue: 221.0 / 255)
 let gradientEnd = Color(red: 239.0 / 255, green: 172.0 / 255, blue: 20.0 / 255)
-let minDashboardWidth: CGFloat = 375.0
+let minDashboardWidth: CGFloat = 450.0
 
 enum DetailViewState {
     
@@ -123,36 +123,40 @@ struct ContentView: View {
                 }
                 .padding(.top)
 
-                DetailProductBuyerView(viewState: self.$viewState)
+                DetailProductBuyerView(viewState: self.$viewState,
+                                       positionOffset: self.$positionOffset)
                     .frame(width: minDashboardWidth)
-                    .background(RoundedRectangle(cornerRadius: 25).fill(Color.white))
                     .padding([.top, .bottom])
-                    .padding(.trailing, 20.0)
                     .offset(x:
                         (reader.size.width - minDashboardWidth) + self.positionOffset
                     )
-                    .animation(.spring(
-                        response: 0.6, dampingFraction: 0.6, blendDuration: 0)
-                    )
+                    .animation(.spring())
+//                    .disabled(self.viewState == .opened)
+                    .onTapGesture { }
                     .gesture(
                         DragGesture().onChanged { value in
-                            self.positionOffset = value.translation.width
+
+                            if self.viewState == .closed &&
+                                value.translation.width > -200 {
+                                
+                                self.positionOffset = value.translation.width
+                            }
                         }
                         .onEnded { value in
-                            
+
                             switch self.viewState {
 
                             case .closed:
                                 
-                                let threshold: CGFloat = -(minDashboardWidth - 100)
+                                let threshold: CGFloat = -50.0
 
                                 if value.translation.width < threshold {
-                                    
-                                    self.positionOffset = -minDashboardWidth
+
+                                    self.positionOffset = -(minDashboardWidth - 50.0)
                                     self.viewState = .opened
 
                                 } else {
-                                    
+
                                     self.positionOffset = 0.0
                                 }
 

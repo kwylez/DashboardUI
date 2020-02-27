@@ -12,6 +12,8 @@ struct DetailProductBuyerView: View {
     
     @Binding var viewState: DetailViewState
     
+    @Binding var positionOffset: CGFloat
+    
     var body: some View {
         
         HStack {
@@ -21,7 +23,8 @@ struct DetailProductBuyerView: View {
                 .padding(.trailing, 10.0)
 
             VStack {
-                DetailView(viewState: self.$viewState)
+                DetailView(viewState: self.$viewState,
+                           positionOffset: self.$positionOffset)
                 Spacer()
             }
             .background(RoundedRectangle(cornerRadius: 25).fill(Color.white))
@@ -31,6 +34,6 @@ struct DetailProductBuyerView: View {
 
 struct DetailProductBuyerView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailProductBuyerView(viewState: .constant(.closed))
+        DetailProductBuyerView(viewState: .constant(.closed), positionOffset: .constant(0.0))
     }
 }
