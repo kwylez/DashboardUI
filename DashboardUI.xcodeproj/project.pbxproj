@@ -91,6 +91,7 @@
 				01799AF424061FF500F99C96 /* DetailProductBuyerView.swift */,
 				01CF82632404271400F03E79 /* DetailView.swift */,
 				01CF82612403817400F03E79 /* Extensions.swift */,
+				01C262F524076AA90069EE9E /* FilterMenuView.swift */,
 				01A0F09224056CE600F4D171 /* HandleBarView.swift */,
 				01CF825D24037F1500F03E79 /* Helpers.swift */,
 				01CF825F24037FDC00F03E79 /* LineView.swift */,
@@ -101,7 +102,6 @@
 				01450D8A23FC3F770055D0B2 /* Assets.xcassets */,
 				01450D8F23FC3F770055D0B2 /* LaunchScreen.storyboard */,
 				01450D8C23FC3F770055D0B2 /* Preview Content */,
-				01C262F524076AA90069EE9E /* FilterMenuView.swift */,
 			);
 			path = DashboardUI;
 			sourceTree = "<group>";
