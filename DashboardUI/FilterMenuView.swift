@@ -9,16 +9,21 @@
 import SwiftUI
 
 struct MyTextPreferenceData: Equatable {
+    
     let viewIdx: Int
+    
     let rect: CGRect
 }
 
 struct MyTextPreferenceKey: PreferenceKey {
+    
     typealias Value = [MyTextPreferenceData]
 
     static var defaultValue: [MyTextPreferenceData] = []
     
-    static func reduce(value: inout [MyTextPreferenceData], nextValue: () -> [MyTextPreferenceData]) {
+    static func reduce(value: inout [MyTextPreferenceData],
+                       nextValue: () -> [MyTextPreferenceData]) {
+        
         value.append(contentsOf: nextValue())
     }
 }
@@ -28,12 +33,16 @@ struct MenuItemView: View {
     @Binding var activeMonth: Int
     
     let label: String
+    
     let idx: Int
     
     var body: some View {
+        
         Text(label)
             .padding(10)
             .background(MyPreferenceViewSetter(idx: idx))
+            .foregroundColor(.white)
+            .font(.system(.body))
             .onTapGesture {
                 self.activeMonth = self.idx
             }
@@ -41,14 +50,16 @@ struct MenuItemView: View {
 }
 
 struct MyPreferenceViewSetter: View {
+    
     let idx: Int
     
     var body: some View {
+    
         GeometryReader { geometry in
             Rectangle()
                 .fill(Color.clear)
                 .preference(key: MyTextPreferenceKey.self,
-                            value: [MyTextPreferenceData(viewIdx: self.idx, rect: geometry.frame(in: .named("myZstack")))])
+                            value: [MyTextPreferenceData(viewIdx: self.idx, rect: geometry.frame(in: .named("filterMenu")))])
         }
     }
 }
@@ -56,16 +67,8 @@ struct MyPreferenceViewSetter: View {
 struct FilterMenuView: View {
     
     @State private var activeIdx: Int = 0
-    @State private var rects: [CGRect] = Array<CGRect>(repeating: CGRect(), count: 12)
-    
-    private var menuTitles: Array<String> {
-        return
-            [
-                "Sales",
-                "Earnings",
-                "Revenue"
-            ]
-    }
+    @State private var rects: Array<CGRect> = Array(repeating: CGRect(),
+                                                    count: 3)
     
     var body: some View {
         
@@ -90,13 +93,12 @@ struct FilterMenuView: View {
                     .foregroundColor(.white)
                     .opacity(0.15)
                 Rectangle()
-                    .frame(width: 25.0, height: 4.0)
+                    .frame(width: self.rects[self.activeIdx].width, height: 4.0)
                     .foregroundColor(.white)
-                    .offset(x: rects[activeIdx].minX)
-                    .animation(.easeInOut(duration: 1.0))
+                    .offset(x: self.rects[activeIdx].minX)
+                    .animation(.spring())
             }
         }
-//        .coordinateSpace(name: "myVstack")
     }
 }
 
