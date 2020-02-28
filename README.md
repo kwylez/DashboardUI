@@ -11,5 +11,5 @@ You can drag the detail screen to open, the chart path and circle come together 
 menu item.
 
 ![Detail view closed](Screenshots/dashboard-closed.png)
-![Detail view opened](Screenshots/dashboard-open)
+![Detail view opened](Screenshots/dashboard-open.png)
 
