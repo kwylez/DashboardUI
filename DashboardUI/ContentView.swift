@@ -59,6 +59,9 @@ struct ContentView: View {
     
     @GestureState private var dragState: DragState = .inactive
     
+    @State private var activeIdx: Int = 0
+    @State private var rects: [CGRect] = Array<CGRect>(repeating: CGRect(), count: 3)
+    
     var body: some View {
         
         GeometryReader {reader in
@@ -94,7 +97,7 @@ struct ContentView: View {
                             FilterMenuView()
                                 .frame(width: 300.0)
                                 .padding(.bottom, 50.0)
-                                .coordinateSpace(name: "myVstack")
+                                .coordinateSpace(name: "filterMenu")
                             
                             DashboardView()
                                 .frame(width: 400.0, height: 400.0)
