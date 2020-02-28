@@ -85,22 +85,16 @@ struct ContentView: View {
                             .padding(.top, 90.0)
                         
                         VStack(alignment: .leading) {
+                            
                             Text("Dashboard")
                                 .font(.system(.largeTitle)).bold()
                                 .foregroundColor(.white)
                                 .padding(.bottom)
-                            HStack(spacing: 20.0) {
-                                Text("Sales")
-                                    .foregroundColor(.white)
-                                    .font(.system(.body)).bold()
-                                Text("Earnings")
-                                    .foregroundColor(.white)
-                                    .font(.system(.body)).bold()
-                                Text("Revenue")
-                                    .foregroundColor(.white)
-                                    .font(.system(.body)).bold()
-                            }
-                            .padding(.bottom, 50.0)
+                            
+                            FilterMenuView()
+                                .frame(width: 300.0)
+                                .padding(.bottom, 50.0)
+                                .coordinateSpace(name: "myVstack")
                             
                             DashboardView()
                                 .frame(width: 400.0, height: 400.0)
